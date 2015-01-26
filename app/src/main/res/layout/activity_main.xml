@@ -87,4 +87,10 @@
         android:text="@string/check_mustard_text"
         android:id="@+id/check_mustard" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_place_order_text"
+        android:id="@+id/button_place_order" />
+
 </LinearLayout>

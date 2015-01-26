@@ -16,5 +16,6 @@
     <string name="check_olives_text">Olives</string>
     <string name="check_mayonnaise_text">Mayonnaise</string>
     <string name="check_mustard_text">Mustard</string>
+    <string name="button_place_order_text">Place Order</string>
 
 </resources>
