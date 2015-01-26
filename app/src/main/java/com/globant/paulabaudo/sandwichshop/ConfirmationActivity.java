@@ -4,35 +4,21 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 
 
-public class MainActivity extends ActionBarActivity {
-
-    Button mPlaceOrderButton;
-    Button mPlaceOrderButtonLand;
+public class ConfirmationActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        init();
+        setContentView(R.layout.activity_confirmation);
     }
 
-    private void init(){
-        try {
-            mPlaceOrderButton = (Button) findViewById(R.id.button_place_order);
-            mPlaceOrderButton.setOnClickListener(new PlaceOrderListener());
-        } catch (NullPointerException e){
-            mPlaceOrderButtonLand = (Button) findViewById(R.id.button_place_order_land);
-            mPlaceOrderButtonLand.setOnClickListener(new PlaceOrderListener());
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_confirmation, menu);
         return true;
     }
 
