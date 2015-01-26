@@ -18,5 +18,6 @@
     <string name="check_mustard_text">Mustard</string>
     <string name="button_place_order_text">Place Order</string>
     <string name="title_activity_confirmation">Order Confirmation</string>
+    <string name="text_view_confirmation_text">Your order has been placed successfully!</string>
 
 </resources>

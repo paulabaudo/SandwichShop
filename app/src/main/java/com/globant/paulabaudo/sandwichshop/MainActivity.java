@@ -10,7 +10,6 @@ import android.widget.Button;
 public class MainActivity extends ActionBarActivity {
 
     Button mPlaceOrderButton;
-    Button mPlaceOrderButtonLand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +21,11 @@ public class MainActivity extends ActionBarActivity {
     private void init(){
         try {
             mPlaceOrderButton = (Button) findViewById(R.id.button_place_order);
-            mPlaceOrderButton.setOnClickListener(new PlaceOrderListener());
         } catch (NullPointerException e){
-            mPlaceOrderButtonLand = (Button) findViewById(R.id.button_place_order_land);
-            mPlaceOrderButtonLand.setOnClickListener(new PlaceOrderListener());
+            mPlaceOrderButton = (Button) findViewById(R.id.button_place_order_land);
         }
+
+        mPlaceOrderButton.setOnClickListener(new PlaceOrderListener());
     }
 
     @Override
