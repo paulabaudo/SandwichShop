@@ -9,5 +9,12 @@
     <string name="radio_button_white_text">White</string>
     <string name="radio_button_rye_text">Rye</string>
     <string name="text_view_bread_text">Choose your bread...</string>
+    <string name="text_view_condiments_text">Choose some condiments...</string>
+    <string name="check_tomatoes_text">Tomatoes</string>
+    <string name="check_pickles_text">Pickles</string>
+    <string name="check_lettuce_text">Lettuce</string>
+    <string name="check_olives_text">Olives</string>
+    <string name="check_mayonnaise_text">Mayonnaise</string>
+    <string name="check_mustard_text">Mustard</string>
 
 </resources>
