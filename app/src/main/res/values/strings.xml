@@ -5,5 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="text_view_customize_text">Customize your sandwich!</string>
+    <string name="radio_button_wheat_text">Wheat</string>
+    <string name="radio_button_white_text">White</string>
+    <string name="radio_button_rye_text">Rye</string>
+    <string name="text_view_bread_text">Choose your bread...</string>
 
 </resources>
