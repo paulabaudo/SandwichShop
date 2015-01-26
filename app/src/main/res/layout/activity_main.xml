@@ -51,46 +51,40 @@
         android:text="@string/text_view_condiments_text"
         android:id="@+id/text_view_condiments" />
 
-    <LinearLayout
-        android:orientation="vertical"
+    <CheckBox
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:text="@string/check_tomatoes_text"
+        android:id="@+id/check_tomatoes" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/check_tomatoes_text"
-            android:id="@+id/check_tomatoes" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_pickles_text"
+        android:id="@+id/check_pickles" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/check_pickles_text"
-            android:id="@+id/check_pickles" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_lettuce_text"
+        android:id="@+id/check_lettuce" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/check_lettuce_text"
-            android:id="@+id/check_lettuce" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_olives_text"
+        android:id="@+id/check_olives" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/check_olives_text"
-            android:id="@+id/check_olives" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_mayonnaise_text"
+        android:id="@+id/check_mayonnaise" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/check_mayonnaise_text"
-            android:id="@+id/check_mayonnaise" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/check_mustard_text"
-            android:id="@+id/check_mustard" />
-    </LinearLayout>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_mustard_text"
+        android:id="@+id/check_mustard" />
 
 </LinearLayout>
