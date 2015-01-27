@@ -24,5 +24,6 @@
     <string name="text_view_confirmations_condiments">Condiments:</string>
     <string name="title_activity_selection">Selection</string>
     <string name="text_view_selection_text">How many sandwiches would you like to order?</string>
+    <string name="button_start_text">Start!</string>
 
 </resources>

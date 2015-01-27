@@ -1,19 +1,40 @@
 package com.globant.paulabaudo.sandwichshop;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class SelectionActivity extends ActionBarActivity {
+
+    EditText mSelectionEditText;
+    Button mStartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
+
+        init();
     }
 
+    private void init(){
+        mSelectionEditText = (EditText) findViewById(R.id.edit_text_number);
+        mStartButton = (Button) findViewById(R.id.button_start);
+
+        mStartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iStart = new Intent(SelectionActivity.this, OrderActivity.class);
+                startActivity(iStart);
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
