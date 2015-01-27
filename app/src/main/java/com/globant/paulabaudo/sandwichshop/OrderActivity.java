@@ -11,7 +11,7 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 
 
-public class MainActivity extends ActionBarActivity {
+public class OrderActivity extends ActionBarActivity {
 
     Button mPlaceOrderButton;
 

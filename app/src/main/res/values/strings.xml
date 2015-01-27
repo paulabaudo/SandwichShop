@@ -22,5 +22,7 @@
     <string name="text_view_confirmation_bread_text">Bread:</string>
     <string name="text_view_confirmation_dialog">You have chosen...</string>
     <string name="text_view_confirmations_condiments">Condiments:</string>
+    <string name="title_activity_selection">Selection</string>
+    <string name="text_view_selection_text">How many sandwiches would you like to order?</string>
 
 </resources>
