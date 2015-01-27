@@ -41,19 +41,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/radio_button_white_text"
-                    android:id="@+id/radio_button_white_land" />
+                    android:id="@+id/radio_button_white"
+                    android:checked="true"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/radio_button_wheat_text"
-                    android:id="@+id/radio_button_wheat_land" />
+                    android:id="@+id/radio_button_wheat" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/radio_button_rye_text"
-                    android:id="@+id/radio_button_rye_land" />
+                    android:id="@+id/radio_button_rye" />
             </RadioGroup>
         </LinearLayout>
 
@@ -74,37 +75,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/check_tomatoes_text"
-                android:id="@+id/check_tomatoes_land" />
+                android:id="@+id/check_tomatoes" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/check_pickles_text"
-                android:id="@+id/check_pickles_land" />
+                android:id="@+id/check_pickles" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/check_lettuce_text"
-                android:id="@+id/check_lettuce_land" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/check_olives_text"
-                android:id="@+id/check_olives_land" />
+                android:id="@+id/check_lettuce" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/check_mayonnaise_text"
-                android:id="@+id/check_mayonnaise_land" />
+                android:id="@+id/check_mayonnaise" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/check_mustard_text"
-                android:id="@+id/check_mustard_land" />
+                android:id="@+id/check_mustard" />
         </LinearLayout>
 
     </LinearLayout>
@@ -113,6 +108,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_place_order_text"
-        android:id="@+id/button_place_order_land" />
+        android:id="@+id/button_place_order" />
 
 </LinearLayout>

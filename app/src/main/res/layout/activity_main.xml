@@ -29,7 +29,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio_button_white_text"
-            android:id="@+id/radio_button_white" />
+            android:id="@+id/radio_button_white"
+            android:checked="true"/>
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -68,12 +69,6 @@
         android:layout_height="wrap_content"
         android:text="@string/check_lettuce_text"
         android:id="@+id/check_lettuce" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/check_olives_text"
-        android:id="@+id/check_olives" />
 
     <CheckBox
         android:layout_width="wrap_content"

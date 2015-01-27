@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class ConfirmationActivity extends ActionBarActivity {
@@ -12,6 +13,8 @@ public class ConfirmationActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
+
+        init();
     }
 
 
@@ -35,5 +38,16 @@ public class ConfirmationActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void init(){
+        TextView breadText;
+        TextView summaryText;
+
+        breadText = (TextView) findViewById(R.id.text_view_bread_chosen);
+        summaryText =(TextView) findViewById(R.id.text_view_condiments_chosen);
+
+        breadText.setText(getIntent().getExtras().get("bread").toString());
+        summaryText.setText(getIntent().getExtras().get("summary").toString());
     }
 }

@@ -19,5 +19,8 @@
     <string name="button_place_order_text">Place Order</string>
     <string name="title_activity_confirmation">Order Confirmation</string>
     <string name="text_view_confirmation_text">Your order has been placed successfully!</string>
+    <string name="text_view_confirmation_bread_text">Bread:</string>
+    <string name="text_view_confirmation_dialog">You have chosen...</string>
+    <string name="text_view_confirmations_condiments">Condiments:</string>
 
 </resources>
