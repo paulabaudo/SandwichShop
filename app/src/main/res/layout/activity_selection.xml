@@ -30,5 +30,6 @@
         android:id="@+id/button_start"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/button_start_text" />
+        android:text="@string/button_start_text"
+        android:enabled="false"/>
 </RelativeLayout>

@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class ParcelableArray implements Parcelable{
 
-    ArrayList<Sandwich> orders;
+    ArrayList<Sandwich> mOrders;
 
     public ParcelableArray(){
 
@@ -25,16 +25,16 @@ public class ParcelableArray implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         Bundle ordersBundle = new Bundle();
-        ordersBundle.putParcelableArrayList("orders", orders);
+        ordersBundle.putParcelableArrayList("orders", mOrders);
         dest.writeBundle(ordersBundle);
     }
 
-    public ArrayList<Sandwich> getOrders() {
-        return orders;
+    public ArrayList<Sandwich> getmOrders() {
+        return mOrders;
     }
 
-    public void setOrders(ArrayList<Sandwich> orders) {
-        this.orders = orders;
+    public void setmOrders(ArrayList<Sandwich> mOrders) {
+        this.mOrders = mOrders;
     }
 
     public static final Parcelable.Creator<ParcelableArray> CREATOR =
@@ -44,7 +44,7 @@ public class ParcelableArray implements Parcelable{
                 public ParcelableArray createFromParcel(Parcel source) {
                     ParcelableArray ordersArray = new ParcelableArray();
                     Bundle ordersBundle = source.readBundle(Sandwich.class.getClassLoader());
-                    ordersArray.orders = ordersBundle.getParcelableArrayList("orders");
+                    ordersArray.mOrders = ordersBundle.getParcelableArrayList("orders");
                     return ordersArray;
                 }
 

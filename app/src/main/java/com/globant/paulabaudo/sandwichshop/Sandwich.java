@@ -16,7 +16,7 @@ public class Sandwich implements Parcelable {
     Boolean mustard;
 
     public Sandwich(){
-        bread = "";
+        bread = "White";
         tomatoes = false;
         pickles = false;
         lettuce = false;
