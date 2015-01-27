@@ -1,9 +1,12 @@
 package com.globant.paulabaudo.sandwichshop;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by paula.baudo on 27/01/2015.
  */
-public class Sandwich {
+public class Sandwich implements Parcelable {
 
     String bread;
     Boolean tomatoes;
@@ -67,5 +70,15 @@ public class Sandwich {
 
     public void setMustard(Boolean mustard) {
         this.mustard = mustard;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
     }
 }
