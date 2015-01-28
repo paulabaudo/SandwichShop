@@ -1,6 +1,7 @@
 package com.globant.paulabaudo.sandwichshop;
 
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,12 +31,27 @@ public class OrderActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+
         init();
+
+        if (savedInstanceState!=null){
+            mOrders = savedInstanceState.getParcelableArrayList("orders");
+            if (savedInstanceState.getInt("next")==1){
+                mNextSandwichButton.setEnabled(true);
+            } else {
+                mNextSandwichButton.setEnabled(false);
+            }
+            if (savedInstanceState.getInt("place")==1){
+                mPlaceOrderButton.setEnabled(true);
+            } else {
+                mPlaceOrderButton.setEnabled(false);
+            }
+        } else {
+            mOrders = new ArrayList<Sandwich>();
+        }
     }
 
     private void init(){
-        mOrders = new ArrayList<Sandwich>();
-
         mPlaceOrderButton = (Button) findViewById(R.id.button_place_order);
 
         mPlaceOrderButton.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +63,6 @@ public class OrderActivity extends ActionBarActivity {
 //                confirmationIntent.putExtra("bread",bread);
 //                confirmationIntent.putExtra("summary",summary);
                 Bundle extrasBundle = new Bundle();
-                extrasBundle.putInt("count", mOrders.size());
                 extrasBundle.putParcelableArrayList("orders", mOrders);
                 confirmationIntent.putExtras(extrasBundle);
                 v.getContext().startActivity(confirmationIntent);
@@ -74,7 +89,15 @@ public class OrderActivity extends ActionBarActivity {
         });
     }
 
-//    private String getBread(){
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("orders",mOrders);
+        outState.putInt("next",mNextSandwichButton.isEnabled()?1:0);
+        outState.putInt("place",mPlaceOrderButton.isEnabled()?1:0);
+    }
+
+    //    private String getBread(){
 //        String bread = "";
 //
 //        RadioButton whiteBread;

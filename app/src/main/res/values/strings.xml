@@ -25,6 +25,6 @@
     <string name="title_activity_selection">SandwichShop</string>
     <string name="text_view_selection_text">How many sandwiches would you like to order?</string>
     <string name="button_start_text">Start!</string>
-    <string name="button_next_sandwich_text">Next Sandwich</string>
+    <string name="button_next_sandwich_text">Add Sandwich To The Order</string>
 
 </resources>
