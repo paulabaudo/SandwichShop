@@ -85,7 +85,14 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/button_next_sandwich_text"
+        android:id="@+id/button_next_sandwich" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/button_place_order_text"
-        android:id="@+id/button_place_order" />
+        android:id="@+id/button_place_order"
+        android:enabled="false"/>
 
 </LinearLayout>

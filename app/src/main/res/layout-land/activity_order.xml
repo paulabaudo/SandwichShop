@@ -104,10 +104,26 @@
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_place_order_text"
-        android:id="@+id/button_place_order" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_next_sandwich_text"
+            android:id="@+id/button_next_sandwich"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_place_order_text"
+            android:id="@+id/button_place_order"
+            android:layout_weight="1"
+            android:enabled="false"/>
+
+    </LinearLayout>
 
 </LinearLayout>

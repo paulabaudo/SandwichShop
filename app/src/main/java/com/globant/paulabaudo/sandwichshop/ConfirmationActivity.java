@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 
 public class ConfirmationActivity extends ActionBarActivity {
 
@@ -40,14 +42,34 @@ public class ConfirmationActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+//    private void init(){
+//        TextView breadText;
+//        TextView summaryText;
+//
+//        breadText = (TextView) findViewById(R.id.text_view_bread_chosen);
+//        summaryText =(TextView) findViewById(R.id.text_view_condiments_chosen);
+//
+//        breadText.setText(getIntent().getExtras().get("bread").toString());
+//        summaryText.setText(getIntent().getExtras().get("summary").toString());
+//    }
+
     private void init(){
-        TextView breadText;
-        TextView summaryText;
+        TextView summaryText = (TextView) findViewById(R.id.text_view_summary);
+        ArrayList<Sandwich> orders = getIntent().getExtras().getParcelableArrayList("orders");
+        String summary = "";
+        int n = 0;
 
-        breadText = (TextView) findViewById(R.id.text_view_bread_chosen);
-        summaryText =(TextView) findViewById(R.id.text_view_condiments_chosen);
+        for (Sandwich s : orders){
+            n++;
+            String result = "Sandwich " + Integer.toString(n) + ": ";
+            result += s.getBread() + " " + (s.getTomatoes()?"tomatoes ":"") +
+                    (s.getPickles()?"pickles ":"") +
+                    (s.getLettuce()?"lettuce ":"") +
+                    (s.getMayonnaise()?"mayonnaise ":"") +
+                    (s.getMustard()?"mustard":"") + "\n";
+            summary += result;
+        }
 
-        breadText.setText(getIntent().getExtras().get("bread").toString());
-        summaryText.setText(getIntent().getExtras().get("summary").toString());
+        summaryText.setText(summary);
     }
 }

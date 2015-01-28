@@ -16,12 +16,21 @@ public class Sandwich implements Parcelable {
     Boolean mustard;
 
     public Sandwich(){
-        bread = "White";
-        tomatoes = false;
-        pickles = false;
-        lettuce = false;
-        mayonnaise = false;
-        mustard = false;
+        this.bread = "White";
+        this.tomatoes = false;
+        this.pickles = false;
+        this.lettuce = false;
+        this.mayonnaise = false;
+        this.mustard = false;
+    }
+
+    public Sandwich(String bread, Boolean tomatoes, Boolean pickles, Boolean lettuce, Boolean mayonnaise, Boolean mustard) {
+        this.bread = bread;
+        this.tomatoes = tomatoes;
+        this.pickles = pickles;
+        this.lettuce = lettuce;
+        this.mayonnaise = mayonnaise;
+        this.mustard = mustard;
     }
 
     public String getBread() {
@@ -79,6 +88,33 @@ public class Sandwich implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(bread);
+        dest.writeInt(tomatoes?1:0);
+        dest.writeInt(pickles?1:0);
+        dest.writeInt(lettuce?1:0);
+        dest.writeInt(mayonnaise?1:0);
+        dest.writeInt(mustard?1:0);
+    }
 
+    public static final Creator<Sandwich> CREATOR = new Creator<Sandwich>(){
+
+        @Override
+        public Sandwich createFromParcel(Parcel source) {
+            return new Sandwich(source);
+        }
+
+        @Override
+        public Sandwich[] newArray(int size) {
+            return new Sandwich[size];
+        }
+    };
+
+    private Sandwich (Parcel source){
+        bread = source.readString();
+        tomatoes = (source.readInt()==1);
+        pickles = (source.readInt()==1);
+        lettuce = (source.readInt()==1);
+        mayonnaise = (source.readInt()==1);
+        mustard = (source.readInt()==1);
     }
 }

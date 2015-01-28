@@ -9,12 +9,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 public class OrderActivity extends ActionBarActivity {
 
     Button mPlaceOrderButton;
-    Sandwich mSandwich;
+    Button mNextSandwichButton;
+    ArrayList<Sandwich> mOrders;
+    RadioButton mWhiteBread;
+    CheckBox mTomatoesCheck;
+    CheckBox mPicklesCheck;
+    CheckBox mLettuceCheck;
+    CheckBox mMayonnaiseCheck;
+    CheckBox mMustardCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +34,7 @@ public class OrderActivity extends ActionBarActivity {
     }
 
     private void init(){
-        mSandwich = new Sandwich();
+        mOrders = new ArrayList<Sandwich>();
 
         mPlaceOrderButton = (Button) findViewById(R.id.button_place_order);
 
@@ -32,13 +42,34 @@ public class OrderActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 //                String bread = getBread();
-                setBread();
 //                String summary = getSummary();
-                setSummary();
                 Intent confirmationIntent = new Intent(v.getContext(), ConfirmationActivity.class);
 //                confirmationIntent.putExtra("bread",bread);
 //                confirmationIntent.putExtra("summary",summary);
+                Bundle extrasBundle = new Bundle();
+                extrasBundle.putInt("count", mOrders.size());
+                extrasBundle.putParcelableArrayList("orders", mOrders);
+                confirmationIntent.putExtras(extrasBundle);
                 v.getContext().startActivity(confirmationIntent);
+            }
+        });
+
+        mNextSandwichButton = (Button) findViewById(R.id.button_next_sandwich);
+
+        mNextSandwichButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sandwich sandwich = new Sandwich();
+                sandwich = getSandwichOrder();
+                mOrders.add(sandwich);
+                if (readyToPlaceOrder()){
+                    mNextSandwichButton.setEnabled(false);
+                    mPlaceOrderButton.setEnabled(true);
+                } else {
+                    reset();
+                }
+                Toast.makeText(getBaseContext(), "The sandwich has been added to the order",
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -68,93 +99,100 @@ public class OrderActivity extends ActionBarActivity {
 //    private String getSummary(){
 //        String summary = "";
 //
-//        CheckBox tomatoesCheck;
-//        CheckBox picklesCheck;
-//        CheckBox lettuceCheck;
-//        CheckBox mayonnaiseCheck;
-//        CheckBox mustardCheck;
+//        CheckBox mTomatoesCheck;
+//        CheckBox mPicklesCheck;
+//        CheckBox mLettuceCheck;
+//        CheckBox mMayonnaiseCheck;
+//        CheckBox mMustardCheck;
 //
-//        tomatoesCheck = (CheckBox) findViewById(R.id.check_tomatoes);
-//        picklesCheck = (CheckBox) findViewById(R.id.check_pickles);
-//        lettuceCheck = (CheckBox) findViewById(R.id.check_lettuce);
-//        mayonnaiseCheck = (CheckBox) findViewById(R.id.check_mayonnaise);
-//        mustardCheck = (CheckBox) findViewById(R.id.check_mustard);
+//        mTomatoesCheck = (CheckBox) findViewById(R.id.check_tomatoes);
+//        mPicklesCheck = (CheckBox) findViewById(R.id.check_pickles);
+//        mLettuceCheck = (CheckBox) findViewById(R.id.check_lettuce);
+//        mMayonnaiseCheck = (CheckBox) findViewById(R.id.check_mayonnaise);
+//        mMustardCheck = (CheckBox) findViewById(R.id.check_mustard);
 //
-//        if (tomatoesCheck.isChecked()){
+//        if (mTomatoesCheck.isChecked()){
 //            summary += "tomatoes\n";
 //        }
 //
-//        if (picklesCheck.isChecked()){
+//        if (mPicklesCheck.isChecked()){
 //            summary += "pickles\n";
 //        }
 //
-//        if (lettuceCheck.isChecked()){
+//        if (mLettuceCheck.isChecked()){
 //            summary += "lettuce\n";
 //        }
 //
-//        if (mayonnaiseCheck.isChecked()){
+//        if (mMayonnaiseCheck.isChecked()){
 //            summary += "mayonnaise\n";
 //        }
 //
-//        if (mustardCheck.isChecked()){
+//        if (mMustardCheck.isChecked()){
 //            summary += "mustard\n";
 //        }
 //
 //        return summary;
 //    }
 
-    private void setBread(){
-        String bread = "";
+    private Sandwich getSandwichOrder(){
+        Sandwich s = new Sandwich();
 
-        RadioButton whiteBread;
-        RadioButton wheatBread;
+        RadioButton mWheatBread;
 
-        whiteBread = (RadioButton) findViewById(R.id.radio_button_white);
-        wheatBread = (RadioButton) findViewById(R.id.radio_button_wheat);
+        mWhiteBread = (RadioButton) findViewById(R.id.radio_button_white);
+        mWheatBread = (RadioButton) findViewById(R.id.radio_button_wheat);
 
-        if (whiteBread.isChecked()){
-            mSandwich.setBread("White");
+        if (mWhiteBread.isChecked()){
+            s.setBread("White");
         } else {
-            if (wheatBread.isChecked()){
-                mSandwich.setBread("Wheat");
+            if (mWheatBread.isChecked()){
+                s.setBread("Wheat");
             } else {
-                mSandwich.setBread("Rye");
+                s.setBread("Rye");
             }
         }
+
+        mTomatoesCheck = (CheckBox) findViewById(R.id.check_tomatoes);
+        mPicklesCheck = (CheckBox) findViewById(R.id.check_pickles);
+        mLettuceCheck = (CheckBox) findViewById(R.id.check_lettuce);
+        mMayonnaiseCheck = (CheckBox) findViewById(R.id.check_mayonnaise);
+        mMustardCheck = (CheckBox) findViewById(R.id.check_mustard);
+
+        if (mTomatoesCheck.isChecked()){
+            s.setTomatoes(true);
+        }
+
+        if (mPicklesCheck.isChecked()){
+            s.setPickles(true);
+        }
+
+        if (mLettuceCheck.isChecked()){
+            s.setLettuce(true);
+        }
+
+        if (mMayonnaiseCheck.isChecked()){
+            s.setMayonnaise(true);
+        }
+
+        if (mMustardCheck.isChecked()){
+            s.setMustard(true);
+        }
+
+        return s;
     }
 
-    private void setSummary(){
-        CheckBox tomatoesCheck;
-        CheckBox picklesCheck;
-        CheckBox lettuceCheck;
-        CheckBox mayonnaiseCheck;
-        CheckBox mustardCheck;
+    private Boolean readyToPlaceOrder(){
+        int count = Integer.parseInt(getIntent().getExtras().get("count").toString());
+        return mOrders.size()==count;
+    }
 
-        tomatoesCheck = (CheckBox) findViewById(R.id.check_tomatoes);
-        picklesCheck = (CheckBox) findViewById(R.id.check_pickles);
-        lettuceCheck = (CheckBox) findViewById(R.id.check_lettuce);
-        mayonnaiseCheck = (CheckBox) findViewById(R.id.check_mayonnaise);
-        mustardCheck = (CheckBox) findViewById(R.id.check_mustard);
-
-        if (tomatoesCheck.isChecked()){
-            mSandwich.setTomatoes(true);
-        }
-
-        if (picklesCheck.isChecked()){
-            mSandwich.setPickles(true);
-        }
-
-        if (lettuceCheck.isChecked()){
-            mSandwich.setLettuce(true);
-        }
-
-        if (mayonnaiseCheck.isChecked()){
-            mSandwich.setMayonnaise(true);
-        }
-
-        if (mustardCheck.isChecked()){
-            mSandwich.setMustard(true);
-        }
+    private void reset(){
+        mWhiteBread.setChecked(true);
+        mTomatoesCheck.setChecked(false);
+        mPicklesCheck.setChecked(false);
+        mLettuceCheck.setChecked(false);
+        mMayonnaiseCheck.setChecked(false);
+        mMustardCheck.setChecked(false);
     }
 
     @Override

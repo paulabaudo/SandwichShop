@@ -31,30 +31,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/text_view_confirmation_bread_text"
-            android:id="@+id/text_view_confirmation_bread" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/text_view_bread_chosen"
-            android:layout_gravity="center" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/text_view_confirmation_condiments"
-            android:text="@string/text_view_confirmations_condiments" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/text_view_condiments_chosen"
-            android:layout_gravity="center" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/text_view_summary" />
 
     </LinearLayout>
 </LinearLayout>
