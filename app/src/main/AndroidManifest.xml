@@ -13,6 +13,7 @@
         </activity>
         <activity
             android:name=".ConfirmationActivity"
+            android:theme="@style/ConfirmationTheme"
             android:label="@string/title_activity_confirmation" >
         </activity>
         <activity
