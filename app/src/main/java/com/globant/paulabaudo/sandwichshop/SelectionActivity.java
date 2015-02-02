@@ -3,6 +3,7 @@ package com.globant.paulabaudo.sandwichshop;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -13,7 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class SelectionActivity extends Activity {
+public class SelectionActivity extends ActionBarActivity {
 
     EditText mSelectionEditText;
     Button mStartButton;

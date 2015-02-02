@@ -1,9 +1,9 @@
 package com.globant.paulabaudo.sandwichshop;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.PersistableBundle;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-public class OrderActivity extends Activity {
+public class OrderActivity extends ActionBarActivity {
 
     Button mPlaceOrderButton;
     Button mNextSandwichButton;
