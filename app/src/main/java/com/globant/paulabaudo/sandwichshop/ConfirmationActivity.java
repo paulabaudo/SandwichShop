@@ -1,6 +1,6 @@
 package com.globant.paulabaudo.sandwichshop;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class ConfirmationActivity extends ActionBarActivity {
+public class ConfirmationActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
